@@ -1,0 +1,52 @@
+.products-page { padding: 2rem 0 4rem; }
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.products-title { font-size: 2rem; font-weight: 700; }
+.products-count { color: var(--text-muted); font-size: 0.875rem; margin-top: 0.25rem; }
+
+.search-form { display: flex; gap: 0.5rem; }
+.search-input { min-width: 260px; }
+
+.products-layout { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; align-items: start; }
+
+.filters-sidebar { position: sticky; top: 80px; }
+.filter-section { margin-bottom: 2rem; }
+.filter-title { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.75rem; }
+
+.category-list { display: flex; flex-direction: column; gap: 0.25rem; }
+.category-filter-btn {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+.category-filter-btn:hover { color: var(--text); background: var(--bg-elevated); }
+.category-filter-btn.active { color: var(--accent); background: var(--accent-dim); border-color: var(--accent); }
+
+.empty-state { text-align: center; padding: 4rem; color: var(--text-muted); }
+.empty-state p:first-child { font-size: 3rem; margin-bottom: 1rem; }
+.empty-state h3 { font-size: 1.2rem; color: var(--text); margin-bottom: 0.5rem; }
+
+.pagination { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 2.5rem; }
+.page-info { font-size: 0.875rem; color: var(--text-muted); }
+
+@media (max-width: 900px) {
+  .products-layout { grid-template-columns: 1fr; }
+  .filters-sidebar { position: static; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .filter-section { flex: 1; min-width: 200px; }
+  .category-list { flex-direction: row; flex-wrap: wrap; }
+  .category-filter-btn { white-space: nowrap; }
+}
+@media (max-width: 600px) {
+  .search-input { min-width: 160px; }
+}

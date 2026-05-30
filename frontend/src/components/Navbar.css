@@ -1,0 +1,186 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+.logo-shop { color: var(--text); }
+.logo-now { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+}
+.nav-link {
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+.nav-link:hover, .nav-link.active { color: var(--text); background: var(--bg-elevated); }
+.nav-link.active { color: var(--accent); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.cart-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.cart-btn:hover { border-color: var(--accent); color: var(--accent); }
+.cart-badge {
+  position: absolute;
+  top: -6px; right: -6px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-menu { position: relative; }
+.user-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.75rem;
+  color: var(--text);
+  transition: var(--transition);
+}
+.user-btn:hover { border-color: var(--accent); }
+.user-avatar {
+  width: 26px; height: 26px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+}
+.user-name { font-size: 0.875rem; }
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  z-index: 200;
+  animation: dropIn 0.15s ease;
+}
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dropdown-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.dropdown-name { font-weight: 500; font-size: 0.9rem; }
+.dropdown-email { font-size: 0.78rem; color: var(--text-muted); }
+.dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text);
+  transition: var(--transition);
+  background: transparent;
+  border: none;
+}
+.dropdown-item:hover { background: var(--bg-elevated); color: var(--accent); }
+.dropdown-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+.logout-item { color: var(--error) !important; }
+.logout-item:hover { background: rgba(239,68,68,0.1) !important; }
+
+.auth-links { display: flex; gap: 0.5rem; }
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  padding: 8px;
+}
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 1rem;
+    display: none;
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .user-name { display: none; }
+  .auth-links .btn-outline { display: none; }
+  .menu-toggle { display: flex; }
+}

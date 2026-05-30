@@ -1,0 +1,18 @@
+.orders-page { padding: 2rem 0 4rem; }
+.orders-title { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+.orders-list { display: flex; flex-direction: column; gap: 1.25rem; }
+.order-card { padding: 1.5rem; }
+.order-card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap; }
+.order-id { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.2rem; }
+.order-date { font-size: 0.8rem; color: var(--text-muted); }
+.order-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.order-items-preview { display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+.order-preview-item { display: flex; align-items: center; gap: 0.75rem; }
+.order-preview-item img { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; background: var(--bg-elevated); }
+.order-preview-item span { font-size: 0.875rem; color: var(--text-muted); }
+.more-items { font-size: 0.8rem; color: var(--text-dim); }
+.order-card-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.order-total-info { display: flex; flex-direction: column; gap: 0.2rem; }
+.order-payment-method { font-size: 0.78rem; color: var(--text-dim); }
+.order-total { font-size: 1.1rem; font-weight: 700; }
+.order-actions { display: flex; gap: 0.5rem; }
