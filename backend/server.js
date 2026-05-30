@@ -7,10 +7,14 @@ const path = require('path');
 dotenv.config();
 
 const app = express();
+const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:3000,http://localhost:5173')
+  .split(',')
+  .map(origin => origin.trim())
+  .filter(Boolean);
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173'],
+  origin: allowedOrigins,
   credentials: true,
 }));
 app.use(express.json());
@@ -27,7 +31,7 @@ app.get('/api/health', (req, res) => res.json({ status: 'OK', message: 'Server r
 
 const startServer = () => {
   const port = process.env.PORT || 5000;
-  const host = process.env.HOST || '127.0.0.1';
+  const host = process.env.HOST || '0.0.0.0';
 
   app.listen(port, host, () => {
     console.log(`🚀 Server running at http://${host}:${port}`);
